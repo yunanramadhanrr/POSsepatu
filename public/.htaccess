@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Jika request adalah file/folder yang benar-benar ada (css, js, gambar, uploads), sajikan langsung
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Selain itu, arahkan semua request ke front controller
+RewriteRule ^ index.php [L]
+
+# Jangan izinkan akses langsung ke file .sql / .env jika ada di dalam public
+<FilesMatch "\.(sql|env)$">
+    Require all denied
+</FilesMatch>
