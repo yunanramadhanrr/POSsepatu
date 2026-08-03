@@ -1,0 +1,8 @@
+{
+    "name": "yunanramadhanr/possepatu",
+    "description": "POS Sepatu",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    }
+}
